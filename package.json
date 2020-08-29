@@ -1,0 +1,26 @@
+{
+  "name": "webpack-cases",
+  "version": "1.0.0",
+  "description": "some cases for webpack learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chieminchan/webpack-cases.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chieminchan/webpack-cases/issues"
+  },
+  "homepage": "https://github.com/chieminchan/webpack-cases#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
