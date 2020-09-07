@@ -139,10 +139,6 @@ const commonConfig = {
             return /jquery|chartjs/.test(content);
         },
 
-
-
-
-
     },
 
     // Webpack 在启动后会从配置的入口模块出发找出所有依赖的模块，Resolve 配置 Webpack 如何寻找模块所对应的文件。
@@ -159,4 +155,25 @@ const commonConfig = {
         // 在导入语句没带文件后缀时，Webpack 会自动带上后缀后去尝试访问文件是否存在。
         extensions: ['.js', '.vue', '.json'],
     },
+
+    // plugins: 在 Webpack 运行的生命周期中会广播出许多事件，Plugin 可以监听特定生命周期阶段的事件，在合适的时机帮你做一些事情
+    plugins: [
+
+        // 为你生成一个HTML文件，然后将打包好的js文件自动引入到这个html文件中。
+        new htmlWebpackPlugin({
+            // 以src/目录下的index.html为模板打包
+            template: 'src/index.html',
+
+            // 打包后输出的文件名
+            filename: 'index.html',
+
+            favicon: path.join(__dirname, 'src/assets/img/favicon.ico'),
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: true
+                // https://github.com/kangax/html-minifier#options-quick-reference
+            },
+        })
+    ]
 }
