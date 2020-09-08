@@ -174,6 +174,11 @@ const commonConfig = {
                 removeAttributeQuotes: true
                 // https://github.com/kangax/html-minifier#options-quick-reference
             },
-        })
+        }),
+
+        // 这个插件的作用就是会帮你删除某个目录的文件,是在打包前删除所有上一次打包好的文件。
+        new CleanWebpackPlugin()
     ]
-}
+};
+
+module.exports = commonConfig;
